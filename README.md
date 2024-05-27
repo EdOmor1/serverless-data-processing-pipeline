@@ -4,14 +4,15 @@ Use Case: A streaming analytics platform for e-commerce companies. The platform 
 
 ## Repository Structure
 
-- `cloudformation/`: Contains CloudFormation templates for deploying Lambda functions, RDS database, and IAM roles.
-- `lambda-functions/`: Contains the Python code for Lambda functions responsible for ingestion, transformation, and analysis.
+- `src/`: Contains the source code and diagrams for the project.
+  - `lambda/`: Contains the Python code for Lambda functions responsible for ingestion, transformation, and analysis.
+  - `cloudformation/`: Contains CloudFormation templates for deploying Lambda functions, RDS database, and IAM roles.
 - `README.md`: Documentation for setting up and using the project.
-- `LICENSE`: License information for the project.
 
 ## Setup
 
 1. Clone the repository.
-2. Deploy the CloudFormation stacks located in the `cloudformation` directory.
+2. Deploy the CloudFormation stacks located in the `src/cloudformation` directory.
 3. Follow the instructions in each Lambda function's directory to deploy the functions.
+
 
