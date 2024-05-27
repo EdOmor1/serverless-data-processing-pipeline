@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudFormation template for RDS database in the streaming analytics platform.
+
+Resources:
+  RDSDBInstance:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      Engine: mysql
+      EngineVersion: '8.0'
+      DBInstanceClass: db.t2.micro
+      MasterUsername: admin
+      MasterUserPassword: adminpassword
+      AllocatedStorage: '20'
+      MultiAZ: false
+      DBInstanceIdentifier: myrdsinstance

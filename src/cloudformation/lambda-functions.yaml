@@ -1,0 +1,74 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudFormation template for Lambda functions in the streaming analytics platform.
+
+Resources:
+  IngestionLambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: ingestion.lambda_handler
+      Runtime: python3.8
+      Role: !GetAtt IngestionLambdaExecutionRole.Arn
+      Code:
+        S3Bucket: your-bucket-name
+        S3Key: path/to/ingestion/lambda.zip
+      Environment:
+        Variables:
+          RDS_ENDPOINT: !Ref RDSInstanceEndpoint
+          RDS_DATABASE_NAME: !Ref RDSDatabaseName
+
+  TransformationLambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: transformation.lambda_handler
+      Runtime: python3.8
+      Role: !GetAtt TransformationLambdaExecutionRole.Arn
+      Code:
+        S3Bucket: your-bucket-name
+        S3Key: path/to/transformation/lambda.zip
+      Environment:
+        Variables:
+          # Add any environment variables needed for transformation
+
+  AnalysisLambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: analysis.lambda_handler
+      Runtime: python3.8
+      Role: !GetAtt AnalysisLambdaExecutionRole.Arn
+      Code:
+        S3Bucket: your-bucket-name
+        S3Key: path/to/analysis/lambda.zip
+      Environment:
+        Variables:
+          # Add any environment variables needed for analysis
+
+  IngestionLambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: IngestionLambdaPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - rds:*
+                Resource: '*'
+
+  TransformationLambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRo
