@@ -7,9 +7,7 @@ Use Case: A streaming analytics platform for e-commerce companies. The platform 
 - `src/`: Contains the source code and diagrams for the project.
   - `lambda/`: Contains the Python code for Lambda functions responsible for ingestion, transformation, and analysis.
   - `cloudformation/`: Contains CloudFormation templates for deploying Lambda functions, RDS database, and IAM roles.
-  - `diagrams/`: Contains architectural and data flow diagrams for better understanding of the project.
 - `README.md`: Documentation for setting up and using the project.
-- `LICENSE`: License information for the project.
 
 ## Setup
 
