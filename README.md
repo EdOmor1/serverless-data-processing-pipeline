@@ -2,14 +2,6 @@
 
 Use Case: A streaming analytics platform for e-commerce companies. The platform ingests real-time data from various sources such as website visits, purchases, and customer interactions. The data is then transformed and analyzed to provide insights into customer behavior, product performance, and marketing effectiveness. The processed data is stored in an RDS database for further analysis and reporting.
 
-# Serverless Data Processing Pipeline with AWS Lambda and RDS
-
-Build a serverless data processing pipeline using AWS Lambda for compute and Amazon RDS for storage.
-
-## Real-World Use Case
-
-A real-world use case for this project could be a streaming analytics platform for an e-commerce company. The platform ingests real-time data from various sources such as website visits, purchases, and customer interactions. The data is then transformed and analyzed to provide insights into customer behavior, product performance, and marketing effectiveness. The processed data is stored in an RDS database for further analysis and reporting.
-
 ## Repository Structure
 
 - `src/`: Contains the source code and diagrams for the project.
